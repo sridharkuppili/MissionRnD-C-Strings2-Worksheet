@@ -16,11 +16,49 @@ Output: consonants should be ??,vowels should be ??
 
 NOTES: Don't create new string , Dont return anything ,you have been given two pointers ,copy values into those .
 */
-
 #include <stddef.h>
 
 
-void count_vowels_and_consonants(char *str,int *consonants, int *vowels){
+void count_vowels_and_consonants(char *str, int *consonants, int *vowels)
+{
+
+
+	int i = 0, len = 0, v = 0, c = 0, a;
+	if (str == NULL)
+	{
+		*consonants = 0;
+		*vowels = 0;
+	}
+
+
+	else
+	{
+		while (str[i] != NULL)
+		{
+
+			len++;
+			i++;
+		}
+
+		for (i = 0; i < len; i++)
+		{
+			a = str[i];
+			if (str[i] == 'A' || str[i] == 'a' || str[i] == 'E' || str[i] == 'e' || str[i] == 'I' || str[i] == 'i' || str[i] == 'O' || str[i] == 'o' || str[i] == 'U' || str[i] == 'u')
+			{
+				v++;
+			}
+
+			else if (a>64 && a<91 || a>96 && a < 123)
+			{
+				c++;
+			}
+
+
+		}
+
+		*vowels = v;
+		*consonants = c;
+	}
 
 
 }
