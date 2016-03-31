@@ -41,7 +41,7 @@ char * get_sub_string(char *str, int i, int j)
 			sub[z] = str[x];
 			z++;
 		}
-		sub[z] = '\0';
+		z=z-1;
 		return sub;
 	}
 	return NULL;
